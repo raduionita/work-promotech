@@ -1,0 +1,6 @@
+PromoMemcacheBundleDefault:
+    path:     /
+    defaults: { _controller: PromoMemcacheBundle:Default:index }
+PromoMemcacheBundleDefaultTest:
+    path:     /test
+    defaults: { _controller: PromoMemcacheBundle:Default:test }

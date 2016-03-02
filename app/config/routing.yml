@@ -1,0 +1,9 @@
+PromoRedisBundle:
+    resource: "@PromoRedisBundle/Resources/config/routing.yml"
+    prefix: /redis
+PromoMemcacheBundle:
+    resource: "@PromoMemcacheBundle/Resources/config/routing.yml"
+    prefix: /memcache
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

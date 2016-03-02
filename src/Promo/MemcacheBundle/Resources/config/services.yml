@@ -1,0 +1,4 @@
+services:
+#    promo_memcache.example:
+#        class: Promo\MemcacheBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
