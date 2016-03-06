@@ -1,0 +1,5 @@
+PromoCassandraBundleDefault:
+    path:     /
+    defaults: { _controller: PromoCassandraBundle:Default:index }
+    options:
+        expose: true

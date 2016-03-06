@@ -1,0 +1,31 @@
+PromoAngularBundleDefault:
+    path:     /
+    defaults: { _controller: PromoAngularBundle:Default:index }
+    options:
+        expose: true
+
+PromoAngularBundleUserGet:
+    path:     /{$id}
+    defaults: { _controller: PromoAngularBundle:User:get, id: 0 }
+    requirements:
+        _format: json
+        methods: GET
+    options:
+        expose: true
+PromoAngularBundleUserFind:
+    path:     /user/find
+    defaults: { _controller: PromoAngularBundle:User:find }
+    requirements:
+        _format: json
+        methods: GET
+    options:
+        expose: true
+        
+        
+        
+# /users
+# /users&name=BadMofo
+
+# /users/{$id}/
+# /users/{$id}/index.html
+# /users/{$id}/delete

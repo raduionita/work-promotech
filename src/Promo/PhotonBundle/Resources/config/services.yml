@@ -1,0 +1,4 @@
+services:
+#    promo_photon.example:
+#        class: Promo\PhotonBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

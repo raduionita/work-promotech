@@ -1,3 +1,12 @@
+PromoAngularBundle:
+    resource: "@PromoAngularBundle/Resources/config/routing.yml"
+    prefix:   /angular
+PromoCassandraBundle:
+    resource: "@PromoCassandraBundle/Resources/config/routing.yml"
+    prefix:   /cassandra
+PromoPhotonBundle:
+    resource: "@PromoPhotonBundle/Resources/config/routing.yml"
+    prefix:   /photon
 PromoRedisBundle:
     resource: "@PromoRedisBundle/Resources/config/routing.yml"
     prefix: /redis
@@ -7,3 +16,5 @@ PromoMemcacheBundle:
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+fos_js_routing_js:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

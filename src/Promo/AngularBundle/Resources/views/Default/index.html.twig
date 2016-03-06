@@ -1,0 +1,28 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+{% verbatim %}
+<div ng-app="app">
+    <div class="form-group form-inline">
+        <input class="form-control" type="text" ng-model="yourName" value="You" placeholder="Name here..."/>
+    </div>
+    <h1>Hello {{yourName}}!</h1>
+    
+    <div ng-view></div>
+</div>
+{% endverbatim %}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bundles/promoangular/css/app.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+<!-- script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-resource.min.js"></script -->
+<!-- script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script -->
+<script type="text/javascript" src="{{ asset('bundles/promoangular/js/app.js') }}"></script>
+{% endblock %}
