@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8435f187ef2613375cd09252bcdd1a69",
-    "content-hash": "e7dffe13b0d849cf1d97a287478ba589",
+    "hash": "9d16e5a172dd5a4aa79601ce672f84cb",
+    "content-hash": "950863217e6b41284fabf7b395ba788c",
     "packages": [
         {
             "name": "datastax/php-driver",
@@ -823,6 +823,37 @@
                 "orm"
             ],
             "time": "2016-01-05 21:34:58"
+        },
+        {
+            "name": "emag-lib/emag-photon-static",
+            "version": "dev-feature/split_ui",
+            "target-dir": "photon-bundle/EmagUI/ThemeBundle/Resources/sources",
+            "source": {
+                "type": "git",
+                "url": "ssh://git@stash.emag.local:7999/ui/emag-photon-static.git",
+                "reference": "2e4537bbc6e99cb10a4d036f755b59d00acd63d7"
+            },
+            "require": {
+                "symfony/symfony": ">=2.2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "notification-url": "http://packagist.emag.local/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "description": "Photon static",
+            "homepage": "http://stash.emag.local:7990/projects/UI/repos/emag-photon-static/browse",
+            "keywords": [
+                "UI Kit",
+                "photon",
+                "ui"
+            ],
+            "time": "2016-02-25 09:38:50"
         },
         {
             "name": "emag-lib/photon-bundle",
@@ -2944,7 +2975,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "emag-lib/photon-bundle": 20
+        "emag-lib/photon-bundle": 20,
+        "emag-lib/emag-photon-static": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

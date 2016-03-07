@@ -81,10 +81,13 @@ app.config(function($routeProvider) {
     $routeProvider.when('/', {
         template : 'some links',
         controller : 'DefaultController'
+    }).when('/promotions', {
+        template : 'some links',
+        controller : 'PromotionsController'
     });
 });
 
-app.controller('DefaultController', DefaultController);
-app.controller('PromotionsController',    PromotionsController);
+app.controller('DefaultController',    DefaultController);
+app.controller('PromotionsController', PromotionsController);
 
 console.log('app.js');

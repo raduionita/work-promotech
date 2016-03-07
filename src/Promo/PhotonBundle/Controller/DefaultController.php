@@ -8,7 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        die('photon');
         return $this->render('PromoPhotonBundle:Default:index.html.twig');
     }
 }

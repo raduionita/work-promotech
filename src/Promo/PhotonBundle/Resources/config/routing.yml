@@ -1,5 +1,16 @@
-PromoPhotonBundleDefault:
+promo_proton_default:
     path:     /
     defaults: { _controller: PromoPhotonBundle:Default:index }
     options:
         expose: true
+        
+        
+profile:
+    path: /profile
+    defaults: { _controller: PromoPhotonBundle:Default:index }
+logout:
+    path: /logout
+    defaults: { _controller: PromoPhotonBundle:Default:index }
+support:
+    path: /support
+    defaults: { _controller: PromoPhotonBundle:Default:index }

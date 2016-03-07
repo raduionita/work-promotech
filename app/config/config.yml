@@ -32,11 +32,29 @@ framework:
     fragments:       ~
     http_method_override: true
     assets: ~
-
+    
+    
+assetic:
+    bundles: [EmagUIThemeBundle] # Use assetic in EmagUIThemeBundle
+    
+ui_bundle:
+    menu_service_id: promo_main.menu # Service id for menu PHP Class
+    
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals: 
+        app_name:          PromoTech
+        app_route_profile: profile
+        app_route_logout:  logout
+        #-------------------Optionals------------
+        locales:            ['ro_RO','en_GB']
+        app_logo_path:      'http://eis.emag.local/ieis/bundles/emaguitheme/emag/images/custom/logo-eMAG.png'
+        app_route_support:  support
+        app_logo_href:      'http://eis.emag.local/ieis/bundles/emaguitheme/emag/images/custom/logo-eMAG.png'
+        static_url:         static_url
+        use_notifications:  false
 
 # Doctrine Configuration
 doctrine:

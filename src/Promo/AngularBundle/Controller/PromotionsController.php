@@ -18,20 +18,20 @@ class PromotionsController extends AbstractController
     {
         return new JsonResponse(['data' => [
             [
-                'id'     => 1
-                'label'  => 'discount'
+                'id'     => 1,
+                'label'  => 'discount',
                 'name'   => 'Discount Promotion',
                 'status' => 'offline',
             ],
             [
-                'id'     => 2
-                'label'  => 'gift'
+                'id'     => 2,
+                'label'  => 'gift',
                 'name'   => 'Gift Promotion',
                 'status' => 'pending',
             ],
             [
-                'id'     => 2
-                'label'  => 'bundle'
+                'id'     => 2,
+                'label'  => 'bundle',
                 'name'   => 'Bundle Promotion',
                 'status' => 'online',
             ],

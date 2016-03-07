@@ -1,4 +1,8 @@
 services:
-#    promo_main.example:
-#        class: Promo\MainBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    promo_main.menu:
+        class: Promo\MainBundle\Service\MenuService
+        arguments: ["@service_container"]
+        scope: "request"
+    request:
+        class: Promo\MainBundle\Service\RequestService
+        arguments: ["@request_stack"]

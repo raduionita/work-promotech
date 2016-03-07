@@ -41,9 +41,10 @@
         "nelmio/cors-bundle": "^1.4",
         "symfony/web-profiler-bundle": "^3.0",
         "datastax/php-driver": "^1.1",
-        "emag-lib/photon-bundle": "dev-master",
         "symfony/assetic-bundle": "^2.7",
-        "friendsofsymfony/jsrouting-bundle": "^1.6"
+        "friendsofsymfony/jsrouting-bundle": "^1.6",
+        "emag-lib/photon-bundle": "dev-master",
+        "emag-lib/emag-photon-static": "dev-feature/split_ui"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -82,6 +83,16 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
+        },
+        "asset-installer-paths": {
+            "bower-asset-library": "vendor/emag-lib/photon-bundle/EmagUI/ThemeBundle/Resources/sources"
+        },
+        "asset-repositories": {
+            "bower-asset/emag-photon-static": {
+                "type": "bower-git-bitbucket",
+                "url": "ssh://git@stash.emag.local:7999/ui/emag-photon-static.git",
+                "name": "bower-asset/emag-photon-static"
+          }
         }
     }
 }
