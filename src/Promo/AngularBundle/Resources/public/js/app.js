@@ -8,18 +8,13 @@ var DefaultController = function($scope) {
     
 };
 
-var UserController = function ($scope, $http) {
-    var list = [
-        {name: 'Radu Ionita',     status: true},
-        {name: 'Raluca Butnariu', status: true},
-        {name: 'Catalin Stoica',  status: true},
-        {name: 'Bogdan Marcu',    status: false}
-    ];
+var PromotionsController = function ($scope, $http) {
+    var list = [];
     
-    $http.get(Routing.generate('PromoAngularBundleUserFind')).success(function(response) {
+    $http.get(Routing.generate('promo_angular_promotions_get')).success(function(response) {
         for (var i = 0, l = response.data.length; i < l; ++i) {
-            var user = response.data[i];
-            list.push({ name: user.name, status: user.status });
+            var promotion = response.data[i];
+            list.push(promotion);
         }
     });
 
@@ -90,6 +85,6 @@ app.config(function($routeProvider) {
 });
 
 app.controller('DefaultController', DefaultController);
-app.controller('UserController',    UserController);
+app.controller('PromotionsController',    PromotionsController);
 
 console.log('app.js');

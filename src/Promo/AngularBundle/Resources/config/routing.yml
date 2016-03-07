@@ -1,31 +1,75 @@
-PromoAngularBundleDefault:
+promo_angular_default:
     path:     /
     defaults: { _controller: PromoAngularBundle:Default:index }
     options:
         expose: true
 
-PromoAngularBundleUserGet:
-    path:     /{$id}
-    defaults: { _controller: PromoAngularBundle:User:get, id: 0 }
+promo_angular_promotions_get:
+    path:     /promotions
+    defaults: { _controller: PromoAngularBundle:Promotions:findPromotions }
     requirements:
-        _format: json
+#       _format: json
         methods: GET
     options:
         expose: true
-PromoAngularBundleUserFind:
-    path:     /user/find
-    defaults: { _controller: PromoAngularBundle:User:find }
+promo_angular_promotions_post:
+    path:     /promotions
+    defaults: { _controller: PromoAngularBundle:Promotions:addPromotion }
     requirements:
-        _format: json
+#       _format: json
+        methods: POST
+    options:
+        expose: true
+promo_angular_promotions_id_get:
+    path:     /promotions/{$id}
+    defaults: { _controller: PromoAngularBundle:Promotions:getPromotion }
+    requirements:
+#       _format: json
+        methods: GET
+    options:
+        expose: true
+promo_angular_promotions_id_put:
+    path:     /promotions/{$id}
+    defaults: { _controller: PromoAngularBundle:Promotions:savePromotion }
+    requirements:
+#       _format: json
+        methods: PUT
+    options:
+        expose: true
+promo_angular_promotions_id_delete:
+    path:     /promotions/{$id}
+    defaults: { _controller: PromoAngularBundle:Promotions:deletePromotion }
+    requirements:
+#       _format: json
+        methods: DELETE
+    options:
+        expose: true
+promo_angular_promotions_id_resource_get:
+    path:     /promotions/{$id}/{$resource}
+    defaults: { _controller: PromoAngularBundle:Promotions:getResource }
+    requirements:
+#       _format: json
         methods: GET
     options:
         expose: true
         
         
-        
-# /users
-# /users&name=BadMofo
 
-# /users/{$id}/
-# /users/{$id}/index.html
-# /users/{$id}/delete
+        
+        
+        
+        
+        
+
+# GET  /promotions               # find all promotions
+# GET  /promotions?status=online # find online promotions
+# POST /promotions?name=...      # save/add new promotion
+
+# GET     /promotions.format/{id}           # get promotion | throws Exception
+# DELETE  /promotions/{id}           # del promotion | throws Exception
+# PUT     /promotions/{id}/?name=... # edit     | throws Exception
+
+# GET     /promotions/{$id}/products
+# GET     /promotions/{$id}/products/{$id}
+# GET     /promotions/{$id}/groups
+# GET     /promotions/{$id}/groups/{$id}

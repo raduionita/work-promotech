@@ -1,6 +1,6 @@
 {% verbatim %}
-<div class="form-group" ng-controller="UserController as ctrl">
-    <span>{{ctrl.count({status:false})}} of {{ctrl.count()}}</span>
+<div class="form-group" ng-controller="PromotionsController as ctrl">
+    <span>{{ctrl.count({status:'online'})}} of {{ctrl.count()}}</span>
 
     <ul class="list-unstyled">
         <li ng-repeat="user in ctrl.findAll()">
