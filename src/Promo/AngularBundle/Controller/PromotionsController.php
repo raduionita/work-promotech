@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * Promotion: radu.ionita
- * Date: 04-Mar-16
- * Time: 17:00
- */
 
 namespace Promo\AngularBundle\Controller;
-
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,7 +35,7 @@ class PromotionsController extends AbstractController
      * @param  int $id
      * @return JsonResponse
      */
-    public function getPromotionAction($id = 0)
+    public function getPromotionAction($id)
     {
         try {
             if (!$id) {
@@ -58,7 +51,7 @@ class PromotionsController extends AbstractController
             $status = Response::HTTP_NOT_FOUND;
             $output = ['message' => $e->getMessage(), 'status' => 'failed'];
         }
-        
+
         return new JsonResponse($output, isset($status) ? $status : Response::HTTP_OK);
     }
     

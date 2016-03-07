@@ -2,7 +2,7 @@ var MainController = function($scope) {
     
 };
 
-var EditController = function($http) {
+var EditController = function($http, $routeParams) {
     /* Controller */ var self = this;            // private :)
     /* int */        this.id     = null;
     /* string */     this.label  = 'discount';
@@ -10,7 +10,8 @@ var EditController = function($http) {
     /* string */     this.status = 'offline';
 
     (function(self) {
-        $http.get(Routing.generate('promo_angular_promotions_id_get')).success(function(response) {
+        console.log(Routing.generate('promo_angular_promotions_id_get', {id: $routeParams.id}), $routeParams.id);
+        $http.get('/angular/promotions/'+ $routeParams.id).success(function(response) {
             for (var field in response.data) {
                 if (response.data.hasOwnProperty(field)) {
                     self[field] = response.data[field];

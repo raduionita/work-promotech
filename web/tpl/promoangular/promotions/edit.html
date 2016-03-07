@@ -1,1 +1,11 @@
-edit.html
+<div class="form-group" ng-controller="EditController as ctrl">
+    <table class="table">
+        <tbody class="form-group">
+            <tr><th>#</th> <td>{{ctrl.id}}</td></tr>
+            <tr><th>Label</th> <td><input class="form-control" type="text" ng-model="ctrl.label"></td></tr>
+            <tr><th>Name</th> <td><input class="form-control" type="text" ng-model="ctrl.name"></td></tr>
+            <tr><th>Status</th> <td><input class="form-control" type="text" ng-model="ctrl.status"></td></tr>
+            <tr><td colspan="2"><button class="btn btn-success" ng-click="ctrl.save()">Save</button></td></tr>
+        </tbody>
+    </table>
+</div>

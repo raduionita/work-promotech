@@ -21,15 +21,15 @@ promo_angular_promotions_post:
     options:
         expose: true
 promo_angular_promotions_id_get:
-    path:     /promotions/{$id}
-    defaults: { _controller: PromoAngularBundle:Promotions:getPromotion }
+    path:     /promotions/{id}
+    defaults: { _controller: PromoAngularBundle:Promotions:getPromotion, id: 0 }
     requirements:
 #       _format: json
         methods: GET
     options:
         expose: true
 promo_angular_promotions_id_put:
-    path:     /promotions/{$id}
+    path:     /promotions/{id}
     defaults: { _controller: PromoAngularBundle:Promotions:savePromotion }
     requirements:
 #       _format: json
@@ -37,7 +37,7 @@ promo_angular_promotions_id_put:
     options:
         expose: true
 promo_angular_promotions_id_delete:
-    path:     /promotions/{$id}
+    path:     /promotions/{id}
     defaults: { _controller: PromoAngularBundle:Promotions:deletePromotion }
     requirements:
 #       _format: json
@@ -45,7 +45,7 @@ promo_angular_promotions_id_delete:
     options:
         expose: true
 promo_angular_promotions_id_resource_get:
-    path:     /promotions/{$id}/{$resource}
+    path:     /promotions/{id}/{$resource}
     defaults: { _controller: PromoAngularBundle:Promotions:getResource }
     requirements:
 #       _format: json
