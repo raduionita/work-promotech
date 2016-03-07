@@ -1,0 +1,36 @@
+<div class="form-group" ng-controller="ListController as ctrl">
+    <span>{{ctrl.count({status:'online'})}} of {{ctrl.count()}}</span>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Status</th>
+                <th>Label</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="status-{{promotion.status}}" ng-repeat="promotion in ctrl.findAll()">
+                <td>{{promotion.id}}</td>
+                <td width="5%" align="center"><input type="checkbox" ng-model="promotion.status"></td>
+                <td><span>{{promotion.label}}</span></td>
+                <td><a href="#/promotions/{{promotion.id}}">{{promotion.name}}</a></td>
+                <td width="10%"><span>{{promotion.status}}</span></td>
+                <td><a class="btn btn-success" href="#/promotions/{{promotion.id}}">Edit</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><input class="form-control" type="text" ng-model="ctrl.label" placeholder="Add new item..."></td>
+                <td><input class="form-control" type="text" ng-model="ctrl.name" placeholder="Add new item..."></td>
+                <td><input class="form-control" type="text" ng-model="ctrl.status" placeholder="Add new item..."></td>
+                <td><button class="btn btn-primary" ng-click="ctrl.add()">Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+</div>

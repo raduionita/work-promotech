@@ -1,4 +1,4 @@
-PromoCassandraBundleDefault:
+promo_cassandra_default:
     path:     /
     defaults: { _controller: PromoCassandraBundle:Default:index }
     options:

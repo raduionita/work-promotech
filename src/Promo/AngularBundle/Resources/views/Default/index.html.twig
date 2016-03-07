@@ -1,15 +1,13 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-{% verbatim %}
 <div ng-app="app">
-    <div class="form-group form-inline">
-        <input class="form-control" type="text" ng-model="yourName" value="You" placeholder="Name here..."/>
-    </div>
-    <h1>Hello {{yourName}}!</h1>
-    
-    <div ng-view></div>
+    <header>
+        <a class="btn btn-primary" href="#/">Home</a>
+        <a class="btn btn-primary" href="#/promotions">Promotions</a>
+    </header>
+
+    <section ng-view></section>
 </div>
-{% endverbatim %}
 {% endblock %}
 
 {% block stylesheets %}

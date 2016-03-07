@@ -48,13 +48,18 @@ class PromotionsController extends AbstractController
             if (!$id) {
                 throw new \Exception("Promotion not found!");
             }
-            $data = ['data' => [], 'message' => 'Ok!', 'status' => 'success'];
+            $output = ['data' => [
+                'id'     => 1,
+                'label'  => 'discount',
+                'name'   => 'Discount Promotion',
+                'status' => 'offline',
+            ], 'message' => 'Ok!', 'status' => 'success'];
         } catch (\Exception $e) {
             $status = Response::HTTP_NOT_FOUND;
-            $data = ['message' => $e->getMessage(), 'status' => 'failed'];
+            $output = ['message' => $e->getMessage(), 'status' => 'failed'];
         }
         
-        return new JsonResponse($data, isset($status) ? $status : Response::HTTP_OK);
+        return new JsonResponse($output, isset($status) ? $status : Response::HTTP_OK);
     }
     
     public function savePromotionAction($id = 0)

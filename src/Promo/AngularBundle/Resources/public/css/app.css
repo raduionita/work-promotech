@@ -1,4 +1,9 @@
-.status-false {
-    text-decoration: line-through;
-    color: grey;
+.status-offline {
+    color: red!important;
+}
+.status-online {
+    color: darkgreen;
+}
+.status-pending {
+    color: black;
 }

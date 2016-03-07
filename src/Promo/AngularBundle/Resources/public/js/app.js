@@ -1,40 +1,60 @@
-var app = angular.module('app', ['ngRoute']);
-
-var UserModel = function() {
+var MainController = function($scope) {
     
 };
 
-var DefaultController = function($scope) {
+var EditController = function($http) {
+    /* Controller */ var self = this;            // private :)
+    /* int */        this.id     = null;
+    /* string */     this.label  = 'discount';
+    /* string */     this.name   = '';
+    /* string */     this.status = 'offline';
+
+    (function(self) {
+        $http.get(Routing.generate('promo_angular_promotions_id_get')).success(function(response) {
+            for (var field in response.data) {
+                if (response.data.hasOwnProperty(field)) {
+                    self[field] = response.data[field];
+                }
+            }
+        });
+    })(this); // constructor
     
+    this.save = function() /* void */ {
+        console.log('Saving...');
+    };
 };
 
-var PromotionsController = function ($scope, $http) {
-    var list = [];
+var ListController = function ($http) {
+    /* array<object> */ var list = [];           // private :)
+    /* Controller */    var self = this;         // private :)
+    /* int */           this.id     = null;
+    /* string */        this.label  = 'discount';
+    /* string */        this.name   = '';
+    /* string */        this.status = 'offline';
+
+    (function(self) {
+        $http.get(Routing.generate('promo_angular_promotions_get')).success(function(response) {
+            for (var i = 0, l = response.data.length; i < l; ++i) {
+                var promotion = response.data[i];
+                list.push(promotion);
+            }
+        });
+    })(this); // constructor
     
-    $http.get(Routing.generate('promo_angular_promotions_get')).success(function(response) {
-        for (var i = 0, l = response.data.length; i < l; ++i) {
-            var promotion = response.data[i];
-            list.push(promotion);
-        }
-    });
-
-    var self = this;
-
-    self.name   = '';
-    self.status = false;
-
-    self.add = function() {
-        if(self.text !== '') {
-            list.push({ name: self.name, status: false});
-            self.name = '';
+    this.add = function() /* -> void */ {
+        if(self.label !== '') {
+            list.push({ id: null, name: self.name, label: self.label, status: self.status});
+            self.label  = 'discount';
+            self.name   = '';
+            self.status = 'offline';
         }
     };
 
-    self.findOne = function(criteria) {
+    this.findOne = function(criteria) /* -> object */ {
 
     };
 
-    self.findAll = function(criteria) {
+    this.findAll = function(criteria) /* -> array<object> */ {
         criteria = criteria || null;
         var result = [];
         angular.forEach(list, function (item) {
@@ -53,7 +73,7 @@ var PromotionsController = function ($scope, $http) {
         return result;
     };
 
-    self.count = function(criteria) {
+    this.count = function(criteria) /* -> int */ {
         criteria = criteria || null;
         var count = 0;
         angular.forEach(list, function (item) {
@@ -73,21 +93,27 @@ var PromotionsController = function ($scope, $http) {
     };
 };
 
+var app = angular.module('app', ['ngRoute']);
+
 app.config(function($interpolateProvider) {
     //$interpolateProvider.startSymbol('[[').endSymbol(']]');
 });
 
 app.config(function($routeProvider) {
     $routeProvider.when('/', {
-        template : 'some links',
-        controller : 'DefaultController'
+        templateUrl: '/tpl/promoangular/default/view.html',
+        controller : 'MainController'
     }).when('/promotions', {
-        template : 'some links',
-        controller : 'PromotionsController'
+        templateUrl: '/tpl/promoangular/promotions/list.html',
+        controller : 'ListController'
+    }).when('/promotions/:id', {
+        templateUrl: '/tpl/promoangular/promotions/edit.html',
+        controller : 'EditController'
+    }).otherwise({
+        template   : 'otherwise'
     });
 });
 
-app.controller('DefaultController',    DefaultController);
-app.controller('PromotionsController', PromotionsController);
-
-console.log('app.js');
+app.controller('MainController', MainController);
+app.controller('ListController', ListController);
+app.controller('EditController', EditController);

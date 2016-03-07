@@ -1,9 +1,9 @@
-PromoRedisBundleDefault:
+promo_redis_default:
     path: /
     defaults: { _controller: PromoRedisBundle:Default:index }
-PromoRedisBundleDefaultIndex:
+promo_redis_default_index:
     path: /index
     defaults: { _controller: PromoRedisBundle:Default:index }
-PromoRedisBundleDefaultTest:
+promo_redis_default_test:
     path: /test
     defaults: { _controller: PromoRedisBundle:Default:test }
